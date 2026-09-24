@@ -8,7 +8,7 @@ Updated: 2026-09-24
 | B01 Product concept | 100% |
 | B02 Market research V1 | 100% |
 | B03 Commercial model | 100% |
-| B04 Architecture | 70% |
+| B04 Architecture | 100% |
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
 | B07 Core workflow implementation | 100% |
@@ -86,6 +86,11 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Final source-structure QA found duplicate legacy definitions of save, calc, exportData and sendResearchToValidation. Removed the obsolete first definitions so each function now has exactly one implementation. Recheck: 34 functions, zero duplicate definitions, versioned state/save/buildState intact, full pricing calculator intact, research transfer intact, reset guard intact, one script block, zero missing DOM references.
 
 - B11 final architecture integrity QA completed: 10 workflow sections are ordered 0–9; DOM references resolve; all onclick handlers resolve; five languages, three search providers, four generators and persistence controls are wired; versioned state is intact; one script block; zero duplicate function definitions. One real issue was found: Sales Page and Online Research sections were reversed in document order (steps 6 and 5). Reordered and rechecked successfully.
+
+## B04 Architecture
+- B04 closed at 100% after documenting the implementation-aligned runtime boundary, ten-stage workflow, Product Profile source of truth, versioned state contract, persistence/recovery, browser-first research flow, cross-stage data flow, localization/responsive boundaries, privacy model and extension points.
+- B06 remains separate: full dictionary/i18n implementation is not counted as B04 work.
+- B10 remains separate: responsive implementation is documented, but real browser/device execution is still pending.
 
 ## B12 Commercial packaging
 - Commercial model contradictions removed from decision log: obsolete Free/Core/Pro entries replaced by the locked one-time $29 model.
