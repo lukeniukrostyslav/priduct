@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 82% |
+| B11 Functional QA | 86% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -80,3 +80,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Edge-case QA found one import UX gap: empty file selection had no explicit state feedback. Added a clear status message; recheck passes for empty import, invalid import, pricing/search guards and DOM references.
 
 - Generator/stage edge-case QA: repeated Sales Page, Content, Launch Checklist and Growth generation overwrites the corresponding output fields rather than appending duplicates. Save/load preserves active stage; stage navigation is now bounded to 0–9; language is persisted in project state. Static source QA passes for single script block and DOM references.
+
+- Recovery-chain QA: Export/Save state is versioned; Import validates version, field types, active stage and language; invalid JSON is caught; empty import selection is handled. Reset was hardened to clear project state, language preference and research query, restore Russian and stage 0, and keep confirmation. Duplicate reset handler removed.
