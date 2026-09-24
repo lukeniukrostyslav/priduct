@@ -7,7 +7,7 @@ All development for this product is performed in `lukeniukrostyslav/priduct`.
 The product targets the digital-product creator market and will initially be packaged for Gumroad.
 
 ## D003 — Product model
-Use a free entry product plus paid Core and Pro tiers.
+LAUNCH OS is one paid product with a one-time purchase. There are no Free/Core/Pro tiers.
 
 ## D004 — No guaranteed-income claims
 Marketing must describe capabilities and workflows, not promise earnings.
@@ -33,7 +33,7 @@ The commercial product will support five languages:
 English is the primary commercial language. Localization must be treated as a product feature, not as machine-translated filler.
 
 ## D009 — Pricing strategy
-Initial pricing will use a Free + Core + Pro structure. Prices are hypotheses to validate against product completeness and buyer response, not promises of value or sales.
+Initial launch price target is $29 one-time purchase. This is a test price and may be revised after real customer feedback; it is not a promise of value or sales.
 
 
 ## D010 — Single paid product
