@@ -15,8 +15,8 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 86% |
-| B12 Commercial packaging | 0% |
+| B11 Functional QA | 100% |
+| B12 Commercial packaging | 25% |
 | B13 Gumroad launch | 0% |
 
 ## Current commercial model
@@ -86,3 +86,8 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Final source-structure QA found duplicate legacy definitions of save, calc, exportData and sendResearchToValidation. Removed the obsolete first definitions so each function now has exactly one implementation. Recheck: 34 functions, zero duplicate definitions, versioned state/save/buildState intact, full pricing calculator intact, research transfer intact, reset guard intact, one script block, zero missing DOM references.
 
 - B11 final architecture integrity QA completed: 10 workflow sections are ordered 0–9; DOM references resolve; all onclick handlers resolve; five languages, three search providers, four generators and persistence controls are wired; versioned state is intact; one script block; zero duplicate function definitions. One real issue was found: Sales Page and Online Research sections were reversed in document order (steps 6 and 5). Reordered and rechecked successfully.
+
+## B12 Commercial packaging
+- Commercial model contradictions removed from decision log: obsolete Free/Core/Pro entries replaced by the locked one-time $29 model.
+- README rewritten as the customer-facing product overview, with product boundaries, workflow, infrastructure and current status.
+- Packaging is not yet release-complete: final distribution archive, polished buyer documentation, license/legal copy and store listing assets remain.
