@@ -14,7 +14,7 @@ Updated: 2026-09-24
 | B07 Core workflow implementation | 100% |
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
-| B10 Responsive/mobile QA | 20% |
+| B10 Responsive/mobile QA | 45% |
 | B11 Functional QA | 0% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
@@ -63,3 +63,6 @@ Percentages represent completed implementation/documentation, not planned work. 
 - B09 now uses versioned local project state and supports JSON import/export for recovery and portability.
 
 - B09 closed: versioned state, JSON export/import, import validation, recovery from portable backups, and reset confirmation are implemented.
+
+- Responsive layout hardened for mobile ≤760px, narrow phones ≤420px, and tablet widths 761–1100px; touch targets, typography, cards, actions and navigation were adjusted.
+- Browser/device execution QA is still pending; implementation improvements are not counted as verified device coverage.
