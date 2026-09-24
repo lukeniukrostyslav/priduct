@@ -11,7 +11,7 @@ Updated: 2026-09-24
 | B04 Architecture | 70% |
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
-| B07 Core workflow implementation | 76% |
+| B07 Core workflow implementation | 82% |
 | B08 Online Research | 65% |
 | B09 Local persistence/export | 55% |
 | B10 Responsive/mobile QA | 20% |
@@ -41,6 +41,7 @@ No Notion. No VPS. No mandatory backend. No paid AI API. No paid search API.
 - research query persistence and research findings handoff into Validation
 - Validation evidence structure: hypothesis, evidence, source, finding, strength and decision
 - Product definition and Offer are connected through shared outcome, format, inclusions and differentiation
+- Pricing includes Entry/Core/Premium scenarios, cost and volume inputs, and recommendation
 
 ## QA status
 Automated/browser QA is not yet marked complete. Responsive behavior is implemented in CSS but still requires device/browser verification. Implementation percentages reflect completed code/documentation, not verified release readiness.
