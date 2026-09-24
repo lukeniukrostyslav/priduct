@@ -11,9 +11,9 @@ Updated: 2026-09-24
 | B04 Architecture | 70% |
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
-| B07 Core workflow implementation | 55% |
-| B08 Online Research | 55% |
-| B09 Local persistence/export | 50% |
+| B07 Core workflow implementation | 62% |
+| B08 Online Research | 65% |
+| B09 Local persistence/export | 55% |
 | B10 Responsive/mobile QA | 20% |
 | B11 Functional QA | 0% |
 | B12 Commercial packaging | 0% |
@@ -38,7 +38,7 @@ No Notion. No VPS. No mandatory backend. No paid AI API. No paid search API.
 - idea readiness score
 - online research via user browser/search engines
 - Google, Bing and DuckDuckGo search actions
-- research query persistence
+- research query persistence and research findings handoff into Validation
 
 ## QA status
 Automated/browser QA is not yet marked complete. Responsive behavior is implemented in CSS but still requires device/browser verification. Implementation percentages reflect completed code/documentation, not verified release readiness.
