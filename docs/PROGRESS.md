@@ -12,8 +12,8 @@ Updated: 2026-09-24
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
 | B07 Core workflow implementation | 100% |
-| B08 Online Research | 90% |
-| B09 Local persistence/export | 55% |
+| B08 Online Research | 100% |
+| B09 Local persistence/export | 75% |
 | B10 Responsive/mobile QA | 20% |
 | B11 Functional QA | 0% |
 | B12 Commercial packaging | 0% |
@@ -58,3 +58,6 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Growth closes the product loop with measure → learn → improve offer → improve product → experiment → repeat.
 
 - Online Research now has structured source, finding and relevance fields, a persistent evidence log, browser search actions, and transfer into Validation.
+
+- B08 closed: structured research evidence log is persisted and transferable to Validation.
+- B09 now uses versioned local project state and supports JSON import/export for recovery and portability.
