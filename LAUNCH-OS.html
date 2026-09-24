@@ -115,34 +115,25 @@ function applyLocalizedStepContent(){
  Object.keys(placeholders).forEach(id=>{const el=document.getElementById(id);if(el)el.placeholder=placeholders[id];});
 }
 function applyLocale(){
- const l=document.getElementById('language').value;
+ const l=document.getElementById('language')?.value||'ru',tr=translations[l]||translations.ru;
  document.documentElement.lang=l;
- const tr=translations[l];
- document.getElementById('heroText').textContent=tr.tag;
- document.getElementById('status').textContent=tr.saved;
- document.querySelector('.project-switch span').textContent=tr.project;
- document.querySelector('.nav-title').textContent=tr.workflow;
- document.querySelector('.sidebar-bottom .nav-title').textContent=tr.language;
- document.querySelector('.top-actions button[onclick="save()"]').textContent=tr.save;
- document.querySelectorAll('.export-top')[0].textContent=tr.export;
- document.querySelectorAll('.export-top')[1].textContent=tr.import;
- document.querySelector('.card.full:last-of-type button[onclick="save()"]').textContent=tr.save;
- document.querySelector('.card.full:last-of-type button[onclick="exportData()"]').textContent=tr.export+' JSON';
- document.querySelector('.card.full:last-of-type button[onclick="importData()"]').textContent=tr.import+' JSON';
- document.querySelector('.card.full:last-of-type button[onclick="clearData()"]').textContent=tr.reset;
- document.querySelector('.right-column .side-card h3').textContent=tr.quick;
- document.querySelector('.right-column .side-card:nth-child(2) h3').textContent=tr.next;
- const p=document.querySelector('[data-step="0"] p'); if(p)p.textContent=tr.score;
- document.getElementById('name').placeholder=tr.name;
- document.getElementById('problem').placeholder=tr.problem;
- document.getElementById('audience').placeholder=tr.audience;
- document.getElementById('outcome').placeholder=tr.outcome;
- document.getElementById('productFormat').placeholder=tr.format;
- document.querySelector('.card.full:first-child h2').textContent=tr.profile;
- document.querySelector('.card.full:first-child p').textContent=tr.profileHelp;
- document.getElementById('workflow').dataset.locale=l; applyLocalizedStepContent();
+ const set=(sel,prop,val)=>{const el=document.querySelector(sel);if(el)el[prop]=val};
+ const by=(id,prop,val)=>{const el=document.getElementById(id);if(el)el[prop]=val};
+ by('heroText','textContent',tr.tag);by('status','textContent',tr.saved);
+ set('.project-switch span','textContent',tr.project);set('.nav-title','textContent',tr.workflow);set('.sidebar-bottom .nav-title','textContent',tr.language);
+ set('.top-actions button[onclick="save()"]','textContent',tr.save);
+ const ex=document.querySelectorAll('.export-top');if(ex[0])ex[0].textContent=tr.export;if(ex[1])ex[1].textContent=tr.import;
+ set('.card.full:last-of-type button[onclick="save()"]','textContent',tr.save);
+ set('.card.full:last-of-type button[onclick="exportData()"]','textContent',tr.export+' JSON');
+ set('.card.full:last-of-type button[onclick="importData()"]','textContent',tr.import+' JSON');
+ set('.card.full:last-of-type button[onclick="clearData()"]','textContent',tr.reset);
+ set('.right-column .side-card h3','textContent',tr.quick);set('.right-column .side-card:nth-child(2) h3','textContent',tr.next);
+ set('[data-step="0"] p','textContent',tr.score);
+ ['name','problem','audience','outcome','productFormat'].forEach(id=>by(id,'placeholder',tr[id]));
+ set('.card.full:first-child h2','textContent',tr.profile);set('.card.full:first-child p','textContent',tr.profileHelp);
+ by('workflow','dataset',{locale:l});
+ applyLocalizedStepContent();
 }
-
 function renderWorkflow(){const l=document.getElementById('language')?.value||'ru';const labels=localeSteps[l]||localeSteps.ru;const html=labels.map((s,i)=>'<button class="'+(i===activeStep?'active':'')+'" onclick="selectStep('+i+')"><span class="stage-num">'+(i+1)+'</span>'+s+'</button>').join('');document.getElementById('workflow').innerHTML=html;document.getElementById('sideNav').innerHTML=html;document.getElementById('sideNav').querySelectorAll('button').forEach((b,i)=>b.onclick=()=>selectStep(i));}
 function selectStep(i){if(!Number.isInteger(i)||i<0||i>=steps.length)return;activeStep=i;renderWorkflow();document.querySelectorAll('.step').forEach(el=>el.classList.toggle('active',Number(el.dataset.step)===i));document.getElementById('crumb').textContent=(localeSteps[document.getElementById('language')?.value||'ru']||localeSteps.ru)[i]+' · LAUNCH OS';const next={ru:['Заполни профиль продукта и проверь идею.','Собери доказательства спроса.','Опиши формат и результат продукта.','Сформулируй предложение.','Проверь ценовой сценарий.','Исследуй конкурентов и цены.','Собери структуру страницы продаж.','Подготовь контент-план.','Собери чек-лист запуска.','Определи следующие шаги роста.'],en:['Complete the Product Profile and validate the idea.','Collect evidence of demand.','Define the product format and outcome.','Formulate the offer.','Test pricing scenarios.','Research competitors and prices.','Build the sales-page structure.','Prepare the content plan.','Build the launch checklist.','Define the next growth steps.'],it:['Completa il profilo e valida l’idea.','Raccogli prove della domanda.','Definisci formato e risultato.','Formula l’offerta.','Testa gli scenari di prezzo.','Ricerca concorrenti e prezzi.','Costruisci la pagina vendita.','Prepara il piano contenuti.','Crea la checklist di lancio.','Definisci i prossimi passi di crescita.'],de:['Produktprofil ausfüllen und Idee validieren.','Nachweise für die Nachfrage sammeln.','Format und Ergebnis definieren.','Angebot formulieren.','Preisszenarien testen.','Wettbewerber und Preise recherchieren.','Verkaufsseite strukturieren.','Inhaltsplan vorbereiten.','Launch-Checkliste erstellen.','Nächste Wachstumsschritte definieren.'],fr:['Complète le profil et valide l’idée.','Réunis des preuves de la demande.','Définis le format et le résultat.','Formule l’offre.','Teste les scénarios de prix.','Structure la page de vente.','Prépare le plan de contenu.','Crée la checklist de lancement.','Définis les prochaines étapes de croissance.']}[document.getElementById('language')?.value||'ru'];document.getElementById('nextStep').textContent=next[i]||next[0];}
 function setLanguage(){const l=document.getElementById('language').value;localStorage.setItem('launchos_lang',l);applyLocale();renderWorkflow();selectStep(activeStep);}
@@ -180,5 +171,16 @@ function generateLaunchChecklist(){const g=id=>document.getElementById(id)?.valu
 function copyLaunchChecklist(){const t=document.getElementById('launchPlan')?.value||'';if(t)navigator.clipboard?.writeText(t)}
 function generateGrowthLoop(){const g=id=>document.getElementById(id)?.value.trim()||'';const name=g('name')||'Your product',outcome=g('outcome')||g('productOutcome')||'the target outcome',validation=g('validationFinding')||g('validation')||'customer evidence',price=g('price')||'29';const loop=[['1. Measure','Track sales, traffic, conversion signals and objections.'],['2. Learn','Compare results with validation: '+validation+'.'],['3. Improve Offer','Strengthen promise, inclusions, proof and CTA.'],['4. Improve Product','Fix the biggest customer-friction point affecting '+outcome+'.'],['5. Run Experiment','Change one meaningful variable at a time.'],['6. Repeat','Feed the result into the next cycle; current price context: $'+price+'.']];document.getElementById('growthOutput').innerHTML='<div class="note"><h3>'+name+' — growth loop</h3>'+loop.map(x=>'<p><strong>'+x[0]+'</strong><br>'+x[1]+'</p>').join('')+'</div>';document.getElementById('growthPlan').value=loop.map(x=>x[0]+'\n'+x[1]).join('\n\n');save()}
 function copyGrowthLoop(){const t=document.getElementById('growthPlan')?.value||'';if(t)navigator.clipboard?.writeText(t)}
-ids.concat(['researchQuery']).forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{update();if(id==='validationDecision'||id==='validationStrength')updateValidationStatus();if(id==='researchFindings')renderResearchLog()}));document.getElementById('validationDecision')?.addEventListener('change',updateValidationStatus);document.getElementById('validationStrength')?.addEventListener('change',updateValidationStatus);renderWorkflow();renderResearchLog();const savedLang=localStorage.getItem('launchos_lang');if(savedLang)document.getElementById('language').value=savedLang;setLanguage();load();
+ids.concat(['researchQuery']).forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{update();if(id==='validationDecision'||id==='validationStrength')updateValidationStatus();if(id==='researchFindings')renderResearchLog()}));document.getElementById('validationDecision')?.addEventListener('change',updateValidationStatus);document.getElementById('validationStrength')?.addEventListener('change',updateValidationStatus);function boot(){
+ try{
+  const savedLang=localStorage.getItem('launchos_lang');
+  if(savedLang&&translations[savedLang])document.getElementById('language').value=savedLang;
+  renderWorkflow();renderResearchLog();applyLocale();renderWorkflow();load();selectStep(activeStep);update();
+ }catch(err){
+  console.error('LAUNCH OS boot error',err);
+  const st=document.getElementById('status');if(st)st.textContent='Ошибка запуска: '+err.message;
+ }
+}
+window.addEventListener('error',e=>{const st=document.getElementById('status');if(st)st.textContent='Ошибка: '+(e.message||'JavaScript')});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 </script></body></html>
