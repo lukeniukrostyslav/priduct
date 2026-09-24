@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 0% |
+| B11 Functional QA | 25% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -68,3 +68,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Browser/device execution QA is still pending; implementation improvements are not counted as verified device coverage.
 
 - Static responsive QA pass: viewport meta, mobile/phone/tablet media rules, touch targets, overflow guard, local persistence and import/export hooks all verified in source. Real browser/device visual execution remains unverified.
+
+- Static functional QA pass completed: workflow navigation, persistence, Validation, Research→Validation, Pricing, Sales Page, Content, Launch, Growth, Import validation, Reset guard, localization shell and search providers all present and wired in source. Runtime browser interaction QA remains pending.
