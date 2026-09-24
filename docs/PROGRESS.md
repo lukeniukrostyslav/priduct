@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 55% |
+| B11 Functional QA | 70% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -74,3 +74,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Cross-reference QA found two real wiring defects: missing Sales Page output container and localization targeting a nonexistent tagline element. Both were fixed; a second reference scan reports no missing DOM IDs.
 
 - Cross-block QA found prototype script duplication/corruption introduced during iterative feature edits. Rebuilt the document script from a clean workflow baseline, restored all generators/persistence/research functions, removed duplicate script tails, and verified exactly one script block with zero missing DOM references.
+
+- Persistence/recovery QA pass: version, timestamp, all workflow fields, active stage, research query, import validation, reset guard and DOM references verified in source. Language is now included in portable project state and import validation also constrains version/stage/language values.
