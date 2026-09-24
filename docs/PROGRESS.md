@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 78% |
+| B11 Functional QA | 82% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -78,3 +78,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Persistence/recovery QA pass: version, timestamp, all workflow fields, active stage, research query, import validation, reset guard and DOM references verified in source. Language is now included in portable project state and import validation also constrains version/stage/language values.
 
 - Edge-case QA found one import UX gap: empty file selection had no explicit state feedback. Added a clear status message; recheck passes for empty import, invalid import, pricing/search guards and DOM references.
+
+- Generator/stage edge-case QA: repeated Sales Page, Content, Launch Checklist and Growth generation overwrites the corresponding output fields rather than appending duplicates. Save/load preserves active stage; stage navigation is now bounded to 0–9; language is persisted in project state. Static source QA passes for single script block and DOM references.
