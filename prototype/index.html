@@ -109,3 +109,4 @@ function clearData(){localStorage.removeItem('launchos');ids.forEach(id=>{const 
 ids.concat(['researchQuery']).forEach(id=>document.getElementById(id)?.addEventListener('input',()=>{update();if(id==='validationDecision'||id==='validationStrength')updateValidationStatus()}));document.getElementById('validationDecision').addEventListener('change',updateValidationStatus);document.getElementById('validationStrength').addEventListener('change',updateValidationStatus);renderWorkflow();const savedLang=localStorage.getItem('launchos_lang');if(savedLang)document.getElementById('language').value=savedLang;setLanguage();load();
 </script>
 </body></html>
+<style>@media(max-width:420px){.top-actions{gap:5px}.top-actions .save-state{display:none}.top-actions button{padding:9px 10px}.hero h2{font-size:23px}.hero p{font-size:13px}.content{padding:10px}.card{padding:14px}.actions{display:grid;grid-template-columns:1fr}.actions button{width:100%}}</style>
