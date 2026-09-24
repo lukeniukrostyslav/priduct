@@ -22,6 +22,7 @@ h1{margin:0;font-size:38px}p{color:#657086}.badge{background:#e8eefc;padding:8px
 <section class="card"><h2>03 Offer</h2><p>Turn the product into a clear offer.</p><input id="promise" placeholder="Core promise"><input id="format" placeholder="Format / deliverables"></section>
 <section class="card"><h2>04 Pricing</h2><p>Test scenarios instead of pretending there is one perfect price.</p><input id="hours" type="number" placeholder="Build hours"><input id="price" type="number" placeholder="Target price"><button onclick="calc()">Calculate</button><p id="priceOut"></p></section>
 <section class="card full"><h2>05 Sales Page Brief</h2><p>Build the raw structure before writing polished copy.</p><textarea id="sales" rows="7" placeholder="Headline&#10;Problem&#10;Solution&#10;Who it is for&#10;What is included&#10;Benefits&#10;FAQ&#10;CTA"></textarea></section>
+<section class="card full"><h2>Research Manually</h2><p>For research that requires the internet, open your preferred browser, collect evidence yourself, then bring the findings back into LAUNCH OS.</p><button class="secondary" onclick="researchManual()">Research manually</button><p id="researchNote"></p></section>
 <section class="card full"><div class="actions"><button onclick="save()">Save</button><button class="secondary" onclick="exportData()">Export JSON</button><button class="secondary" onclick="clearData()">Reset</button></div></section>
 </div></div>
 <script>
@@ -32,6 +33,7 @@ function update(){const n=ids.filter(id=>document.getElementById(id).value.trim(
 function score(){let s=0;['problem','audience','promise','format','validation'].forEach(id=>{if(document.getElementById(id).value.trim())s+=20});document.getElementById('scoreOut').textContent='Readiness score: '+s+'/100';save()}
 function calc(){const h=Number(document.getElementById('hours').value||0),p=Number(document.getElementById('price').value||0);document.getElementById('priceOut').textContent=h&&p?'Revenue per build hour at one sale: $'+(p/h).toFixed(2):'Enter hours and price';save()}
 function exportData(){save();const blob=new Blob([localStorage.getItem('launchos')||'{}'],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='launch-os-project.json';a.click();URL.revokeObjectURL(a.href)}
+function researchManual(){window.open('https://www.google.com/search?q=digital+product+market+research','_blank','noopener,noreferrer');document.getElementById('researchNote').textContent='Research opened in a new browser tab. Add your findings to the Validation section.'}
 function clearData(){localStorage.removeItem('launchos');ids.forEach(id=>document.getElementById(id).value='');update()}
 ids.forEach(id=>document.getElementById(id).addEventListener('input',update));load();
 </script>
