@@ -10,7 +10,7 @@ Updated: 2026-09-24
 | B03 Commercial model | 100% |
 | B04 Architecture | 100% |
 | B05 Visual design V1 | 100% |
-| B06 Localization architecture | 30% |
+| B06 Localization architecture | 100% |
 | B07 Core workflow implementation | 100% |
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
@@ -91,6 +91,11 @@ Percentages represent completed implementation/documentation, not planned work. 
 - B04 closed at 100% after documenting the implementation-aligned runtime boundary, ten-stage workflow, Product Profile source of truth, versioned state contract, persistence/recovery, browser-first research flow, cross-stage data flow, localization/responsive boundaries, privacy model and extension points.
 - B06 remains separate: full dictionary/i18n implementation is not counted as B04 work.
 - B10 remains separate: responsive implementation is documented, but real browser/device execution is still pending.
+
+## B06 Localization architecture
+- B06 closed at 100%: five locale dictionaries now drive workflow navigation, labels, controls, core form placeholders, stage guidance and validation/search/import/reset feedback.
+- Language preference remains persisted locally and is part of the versioned portable project state.
+- B10 remains separate: this closes localization implementation, not real browser/device execution.
 
 ## B12 Commercial packaging
 - Commercial model contradictions removed from decision log: obsolete Free/Core/Pro entries replaced by the locked one-time $29 model.
