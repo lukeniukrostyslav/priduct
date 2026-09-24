@@ -34,3 +34,16 @@ English is the primary commercial language. Localization must be treated as a pr
 
 ## D009 — Pricing strategy
 Initial pricing will use a Free + Core + Pro structure. Prices are hypotheses to validate against product completeness and buyer response, not promises of value or sales.
+
+
+## D010 — Single paid product
+LAUNCH OS will launch as ONE paid product, not Free/Core/Pro tiers.
+
+## D011 — Initial price
+Initial launch price target: $29 one-time purchase. This is a test price and may be revised after real customer feedback and product validation.
+
+## D012 — Delivery model
+The initial product is standalone and local-first. No VPS, backend, database, subscription infrastructure, or Notion integration is required. The buyer receives the finished application/package after purchase and runs it locally in a modern browser.
+
+## D013 — Languages
+The product supports English, Italian, German, French, and Russian.
