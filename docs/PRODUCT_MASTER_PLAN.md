@@ -123,8 +123,7 @@ Target test price: $89–99.
 Primary:
 - responsive web app
 
-Companion:
-- Notion workspace
+Optional downloadable assets:
 - spreadsheet calculators
 - PDF playbook
 - reusable templates
