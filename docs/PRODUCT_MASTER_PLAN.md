@@ -7,7 +7,6 @@ LAUNCH OS — интерактивная система для создател�
 Это не просто:
 - PDF;
 - набор промптов;
-- Notion planner;
 - курс.
 
 Позиционирование: practical operating system for digital product launch.
@@ -108,11 +107,11 @@ Target test price: $39–49.
 - calculators
 - templates
 - AI workflows
-- Notion companion
+- standalone web app
 
 ### Pro
 Target test price: $89–99.
-- web app
+- standalone web app
 - full workflow
 - advanced calculators
 - complete template library
@@ -188,3 +187,44 @@ Current:
 - Launch: 0%
 
 Overall: 5%
+
+
+## 10. Localization
+Supported product languages:
+- English (primary)
+- Italian
+- German
+- French
+- Russian
+
+The web app should use a real localization layer so interface text, onboarding, empty states, validation messages and core product content can switch languages without duplicating application logic.
+
+## 11. Competitive pricing research — September 2026
+Observed Gumroad comparables show a wide range:
+- Digital Product Launch System: $27 launch price, 199 sales; includes Notion, Sheets, HTML, PDF, prompts and calculator.
+- Creator Launch Toolkit Pro: $66.19; includes launch templates, AI prompts and funnel assets.
+- Digital Product Launch Funnel & Email System: A$129 one-time (listed as $91.74 in the current page); includes a 30-day playbook, templates, email frameworks, checklist and offline HTML planner.
+- Ultimate Digital Product Launch Kit & AI Prompt Pack: $27.99.
+
+These are competitor asking prices and product claims, not evidence that those prices guarantee sales.
+
+### Initial LAUNCH OS pricing hypothesis
+Free:
+- $0
+- useful limited workflow, not a crippled demo
+
+Core:
+- launch price: $39
+- regular target: $49
+
+Pro:
+- launch price: $79
+- regular target: $99
+
+We should not launch at the upper end merely because competitors list higher prices. The price should follow verified feature depth, UX quality, localization quality and actual buyer feedback.
+
+### Why this structure
+- $39 Core places the product above low-cost prompt/checklist products while remaining below some larger launch systems.
+- $79 Pro creates a meaningful upgrade without jumping immediately to $99+.
+- After validation, prices can be adjusted based on actual conversion, refunds, support load and feature usage.
+
