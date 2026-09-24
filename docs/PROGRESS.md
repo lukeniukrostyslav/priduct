@@ -13,7 +13,7 @@ Updated: 2026-09-24
 | B06 Localization architecture | 30% |
 | B07 Core workflow implementation | 100% |
 | B08 Online Research | 100% |
-| B09 Local persistence/export | 75% |
+| B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 20% |
 | B11 Functional QA | 0% |
 | B12 Commercial packaging | 0% |
@@ -61,3 +61,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 
 - B08 closed: structured research evidence log is persisted and transferable to Validation.
 - B09 now uses versioned local project state and supports JSON import/export for recovery and portability.
+
+- B09 closed: versioned state, JSON export/import, import validation, recovery from portable backups, and reset confirmation are implemented.
