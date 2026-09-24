@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 45% |
+| B11 Functional QA | 55% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -72,3 +72,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Static functional QA pass completed: workflow navigation, persistence, Validation, Research→Validation, Pricing, Sales Page, Content, Launch, Growth, Import validation, Reset guard, localization shell and search providers all present and wired in source. Runtime browser interaction QA remains pending.
 
 - Cross-reference QA found two real wiring defects: missing Sales Page output container and localization targeting a nonexistent tagline element. Both were fixed; a second reference scan reports no missing DOM IDs.
+
+- Cross-block QA found prototype script duplication/corruption introduced during iterative feature edits. Rebuilt the document script from a clean workflow baseline, restored all generators/persistence/research functions, removed duplicate script tails, and verified exactly one script block with zero missing DOM references.
