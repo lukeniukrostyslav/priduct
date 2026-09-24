@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAUNCH OS — MVP Prototype</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#172033;background:#f5f7fb}
+body{margin:0}.app{max-width:1100px;margin:auto;padding:28px}
+header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:24px}
+h1{margin:0;font-size:38px}p{color:#657086}.badge{background:#e8eefc;padding:8px 12px;border-radius:999px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:white;border:1px solid #e4e8f0;border-radius:18px;padding:20px;box-shadow:0 6px 24px #1720330a}.card h2{font-size:18px;margin:0 0 8px}.card p{font-size:14px;line-height:1.5}.full{grid-column:1/-1}.progress{height:8px;background:#e9edf4;border-radius:8px;overflow:hidden}.bar{height:100%;width:0;background:#172033}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}textarea,input{width:100%;box-sizing:border-box;border:1px solid #d9deea;border-radius:10px;padding:12px;font:inherit;margin:7px 0}button{border:0;border-radius:10px;padding:11px 15px;background:#172033;color:white;font-weight:700;cursor:pointer}.secondary{background:#eef1f6;color:#172033}.actions{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:760px){.app{padding:16px}header{display:block}h1{font-size:30px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div><div class="badge">MVP • local-first</div><h1>LAUNCH OS</h1><p>From idea to launch-ready digital product.</p></div><div class="badge" id="status">Saved locally</div></header>
+<div class="grid">
+<section class="card full"><div class="row"><h2>Product Profile</h2><strong id="pct">0%</strong></div><p>Describe the product once. LAUNCH OS uses this profile as the source of truth for the MVP workflow.</p><input id="name" placeholder="Product name"><textarea id="problem" rows="3" placeholder="What problem does the product solve?"></textarea><input id="audience" placeholder="Who is it for?"><div class="progress"><div class="bar" id="bar"></div></div></section>
+<section class="card"><h2>01 Idea Score</h2><p>Score demand, pain, differentiation and ease of delivery.</p><button onclick="score()">Score idea</button><p id="scoreOut"></p></section>
+<section class="card"><h2>02 Validation</h2><p>Define the evidence you need before building.</p><textarea id="validation" rows="4" placeholder="What evidence would make you confident?"></textarea></section>
+<section class="card"><h2>03 Offer</h2><p>Turn the product into a clear offer.</p><input id="promise" placeholder="Core promise"><input id="format" placeholder="Format / deliverables"></section>
+<section class="card"><h2>04 Pricing</h2><p>Test scenarios instead of pretending there is one perfect price.</p><input id="hours" type="number" placeholder="Build hours"><input id="price" type="number" placeholder="Target price"><button onclick="calc()">Calculate</button><p id="priceOut"></p></section>
+<section class="card full"><h2>05 Sales Page Brief</h2><p>Build the raw structure before writing polished copy.</p><textarea id="sales" rows="7" placeholder="Headline&#10;Problem&#10;Solution&#10;Who it is for&#10;What is included&#10;Benefits&#10;FAQ&#10;CTA"></textarea></section>
+<section class="card full"><div class="actions"><button onclick="save()">Save</button><button class="secondary" onclick="exportData()">Export JSON</button><button class="secondary" onclick="clearData()">Reset</button></div></section>
+</div></div>
+<script>
+const ids=['name','problem','audience','validation','promise','format','hours','price','sales'];
+function save(){const d={};ids.forEach(id=>d[id]=document.getElementById(id).value);localStorage.setItem('launchos',JSON.stringify(d));update();document.getElementById('status').textContent='Saved locally'}
+function load(){try{const d=JSON.parse(localStorage.getItem('launchos')||'{}');ids.forEach(id=>{if(d[id]!==undefined)document.getElementById(id).value=d[id]})}catch(e){}update()}
+function update(){const n=ids.filter(id=>document.getElementById(id).value.trim()).length;const p=Math.round(n/ids.length*100);document.getElementById('pct').textContent=p+'%';document.getElementById('bar').style.width=p+'%'}
+function score(){let s=0;['problem','audience','promise','format','validation'].forEach(id=>{if(document.getElementById(id).value.trim())s+=20});document.getElementById('scoreOut').textContent='Readiness score: '+s+'/100';save()}
+function calc(){const h=Number(document.getElementById('hours').value||0),p=Number(document.getElementById('price').value||0);document.getElementById('priceOut').textContent=h&&p?'Revenue per build hour at one sale: $'+(p/h).toFixed(2):'Enter hours and price';save()}
+function exportData(){save();const blob=new Blob([localStorage.getItem('launchos')||'{}'],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='launch-os-project.json';a.click();URL.revokeObjectURL(a.href)}
+function clearData(){localStorage.removeItem('launchos');ids.forEach(id=>document.getElementById(id).value='');update()}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',update));load();
+</script>
+</body></html>
