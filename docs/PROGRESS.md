@@ -11,9 +11,9 @@ Updated: 2026-09-24
 | B04 Architecture | 70% |
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
-| B07 Core workflow implementation | 45% |
+| B07 Core workflow implementation | 55% |
 | B08 Online Research | 55% |
-| B09 Local persistence/export | 45% |
+| B09 Local persistence/export | 50% |
 | B10 Responsive/mobile QA | 20% |
 | B11 Functional QA | 0% |
 | B12 Commercial packaging | 0% |
@@ -32,7 +32,7 @@ No Notion. No VPS. No mandatory backend. No paid AI API. No paid search API.
 - Premium dashboard shell with desktop sidebar, top bar and responsive mobile navigation
 - 10-step workflow navigation with stage switching and contextual next-step guidance
 - five-language selector shell (EN/IT/DE/FR/RU)
-- local project persistence with active workflow stage
+- Product Profile as shared source of truth; project persistence includes workflow state and core fields
 - JSON export
 - pricing calculator
 - idea readiness score
