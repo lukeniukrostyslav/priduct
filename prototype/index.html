@@ -152,7 +152,7 @@ function applyLocale(){
  const genSelectors=['[data-step="6"] .actions button:first-child','[data-step="7"] .actions button:first-child','[data-step="8"] .actions button:first-child','[data-step="9"] .actions button:first-child'];
  const copySelectors=['[data-step="6"] .actions button.secondary','[data-step="7"] .actions button.secondary','[data-step="8"] .actions button.secondary','[data-step="9"] .actions button.secondary'];
  genSelectors.forEach((s,i)=>set(s,'textContent',gens[i]));copySelectors.forEach((s,i)=>set(s,'textContent',cops[i]));
- ['name','problem','audience','outcome','productFormat'].forEach(id=>by(id,'placeholder',tr[id]));
+ [['name','name'],['problem','problem'],['audience','audience'],['outcome','outcome'],['productFormat','format']].forEach(([id,key])=>by(id,'placeholder',tr[key]));
  by('workflow','dataset',{locale:l});
  applyLocalizedStepContent();
 }
