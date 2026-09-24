@@ -97,6 +97,12 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Language preference remains persisted locally and is part of the versioned portable project state.
 - B10 remains separate: this closes localization implementation, not real browser/device execution.
 
+
+## B10 Responsive / Mobile QA
+- B10 static responsive QA completed against the current prototype source: viewport meta is present; desktop, tablet and mobile breakpoints are defined; mobile switches to a single-column workspace; sidebar becomes an off-canvas menu; the menu control has a 38px touch target; overflow is guarded by min-width:0; mobile hides duplicate top export/import controls to reduce crowding; one script block remains in the prototype.
+- This is a source-level responsive verification. No real browser/device visual execution is claimed, because the available GitHub workflow here does not provide a browser/device runtime.
+- B10 remains 65% until real browser/device verification can be performed.
+
 ## B12 Commercial packaging
 - Commercial model contradictions removed from decision log: obsolete Free/Core/Pro entries replaced by the locked one-time $29 model.
 - README rewritten as the customer-facing product overview, with product boundaries, workflow, infrastructure and current status.
