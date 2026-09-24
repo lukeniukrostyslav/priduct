@@ -69,6 +69,8 @@ Percentages represent completed implementation/documentation, not planned work. 
 
 - Static responsive QA pass: viewport meta, mobile/phone/tablet media rules, touch targets, overflow guard, local persistence and import/export hooks all verified in source. Real browser/device visual execution remains unverified.
 
+- B10 hardening: removed a stray duplicate CSS block from the prototype and consolidated responsive-related styling into the valid stylesheet. Added `docs/RESPONSIVE_QA.md` with viewport matrix, manual browser/device checklist and explicit acceptance boundary.
+
 - Static functional QA pass completed: workflow navigation, persistence, Validation, Research→Validation, Pricing, Sales Page, Content, Launch, Growth, Import validation, Reset guard, localization shell and search providers all present and wired in source. Runtime browser interaction QA remains pending.
 
 - Cross-reference QA found two real wiring defects: missing Sales Page output container and localization targeting a nonexistent tagline element. Both were fixed; a second reference scan reports no missing DOM IDs.
