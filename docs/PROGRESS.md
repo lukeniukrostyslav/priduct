@@ -15,7 +15,7 @@ Updated: 2026-09-24
 | B08 Online Research | 100% |
 | B09 Local persistence/export | 100% |
 | B10 Responsive/mobile QA | 65% |
-| B11 Functional QA | 70% |
+| B11 Functional QA | 78% |
 | B12 Commercial packaging | 0% |
 | B13 Gumroad launch | 0% |
 
@@ -76,3 +76,5 @@ Percentages represent completed implementation/documentation, not planned work. 
 - Cross-block QA found prototype script duplication/corruption introduced during iterative feature edits. Rebuilt the document script from a clean workflow baseline, restored all generators/persistence/research functions, removed duplicate script tails, and verified exactly one script block with zero missing DOM references.
 
 - Persistence/recovery QA pass: version, timestamp, all workflow fields, active stage, research query, import validation, reset guard and DOM references verified in source. Language is now included in portable project state and import validation also constrains version/stage/language values.
+
+- Edge-case QA found one import UX gap: empty file selection had no explicit state feedback. Added a clear status message; recheck passes for empty import, invalid import, pricing/search guards and DOM references.
