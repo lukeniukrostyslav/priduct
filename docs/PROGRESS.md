@@ -11,7 +11,7 @@ Updated: 2026-09-24
 | B04 Architecture | 70% |
 | B05 Visual design V1 | 100% |
 | B06 Localization architecture | 30% |
-| B07 Core workflow implementation | 82% |
+| B07 Core workflow implementation | 86% |
 | B08 Online Research | 65% |
 | B09 Local persistence/export | 55% |
 | B10 Responsive/mobile QA | 20% |
@@ -48,3 +48,5 @@ Automated/browser QA is not yet marked complete. Responsive behavior is implemen
 
 ## Progress rule
 Percentages represent completed implementation/documentation, not planned work. They must not be inflated.
+
+- Sales Page now generates a structured draft from Product Profile, Offer, Validation and Pricing, with copy action.
